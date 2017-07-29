@@ -15,7 +15,7 @@
         <a href="/home">
             <img class="header-main-logo" src="<?php echo get_template_directory_uri();?>/assets/images/cobai-logo.png" alt="cobai-logo" />
         </a>
-        <button class="header-btn">ENQUIRE NOW</button>
+        <a href="/contact"><button class="header-btn">ENQUIRE NOW</button></a>
     </nav>
 </header>
 

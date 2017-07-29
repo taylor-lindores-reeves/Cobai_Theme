@@ -37,6 +37,58 @@ body {
 
 /********************** END OF BODY **********************/
 
+/********************** CONTACT FORM START **********************/
+
+.form-container {
+    margin-left: 5rem;
+    position: relative;
+    top: 100px;
+    width: 25%;
+}
+
+.form-container strong {
+    color: red;
+    font-weight: 200;
+}
+
+input[type="text"], [type="email"] {
+    background-color: black;
+    border: none;
+    padding: 0;
+    margin: 3px;
+    text-indent: 5px;
+    color: #F5F5F5;
+    width: 100%;
+    display: block;
+}
+
+.wpcf7-textarea {
+    border: none;
+    background-color: black;
+    padding: 0;
+    margin: 3px;
+    text-indent: 5px;
+    height: 150px;
+    width: 100%;
+}
+
+.wpcf7-submit {
+    padding: .2rem;
+    margin: 0 8rem;
+    font-size: 25px;
+    width: 25%;
+    border: none;
+    background-color: #1b1b1b;
+}
+
+.wpcf7-submit:hover {
+    background-color: black;
+    transition: background-color .2s ease-in;
+}
+
+/********************** END OF OVERLAY **********************/
+
+
 /********************** START OF HEADER **********************/
 
 .header-nav {
@@ -138,12 +190,38 @@ h4.about-page-title a:hover {
 
 /********************** START OF WHO WE ARE ***********************/
 
-#who-we-are-title {
+#who-we-are-main-title {
     color: #254F6D;
     position: relative;
     top: 15%;
     font-weight: 400;
     left: 5rem;
+}
+
+.profile-titles {
+    margin: 0;
+    padding: 0;
+    line-height: 10px;
+}
+
+p.post-title {
+    color: #F5F5F5;
+    display: block;
+}
+
+p.post-title:after {
+    content:"";
+    border: 1px solid rgba(123, 254, 255, 1);;
+    display: block;
+    position: relative;
+    width: 5%;
+    top: 8px;
+    margin: 0 auto;
+
+}
+
+p.job-title {
+    color: #254F6D;
 }
 
 .profiles-container {
@@ -154,15 +232,6 @@ h4.about-page-title a:hover {
     margin-left: 3rem;
     position: absolute;
     top: 22.5%;
-}
-
-
-.profiles-container p {
-    color: #F5F5F5;
-}
-
-.profiles-container img {
-    filter: grayscale(100%);
 }
 
 .profiles-container img:hover {
@@ -221,11 +290,6 @@ h4.about-page-title a:hover {
     flex: 1;
 }
 
-
-
-/*TODO look into using gulp for wordpress so you can have browsersync, postcss, etc*/
-
-
 /********************** END OF SINGLE PERSON ***********************/
 
 /********************** START OF FOOTER ***********************/
@@ -239,6 +303,14 @@ h4.about-page-title a:hover {
     bottom: 0;
 }
 
+.flexthis a>img {
+    width: 77px;
+    height: 62px;
+    flex: 1;
+    margin-top: 2rem;
+    margin-right: 2.5rem;
+}
+
 .flexthis {
     display: flex;
     justify-content: space-between;
@@ -246,6 +318,7 @@ h4.about-page-title a:hover {
 }
 
 .footer-nav {
+    flex: 6;
     margin-left: 5rem;
     margin-top: 1rem;
 }
@@ -281,7 +354,7 @@ h4.about-page-title a:hover {
 }
 
 .footer-address {
-    margin-right: 5rem;
+    flex: 1;
     margin-top: 1rem;
 }
 
