@@ -16,21 +16,50 @@ function enqueue_cobai_styles() { /** This is only seeming to work for the heade
 add_action( 'wp_enqueue_scripts', 'enqueue_cobai_styles');
 
 ?>
+
 <?php
 
 add_action( 'init', 'create_posttype' );
-function create_posttype() {
-	register_post_type( 'team_member',
-		array(
-			'labels' => array(
-				'name' => __( 'Persons' ),
-				'singular_name' => __( 'Person' )
-			),
-			'public' => true,
-			'has_archive' => true,
-			'rewrite' => array('slug' => 'team_member'),
-		)
-	);
-}
 
+function create_posttype() {
+
+	$labels = array(
+	'name' => 'Persons',
+	'singular_name' => 'Person',
+	'add_new' => 'Add Person',
+	'all_items' => 'All People',
+	'add_new_item' => 'Add Person',
+	'edit_item' => 'Edit Person',
+	'new_item' => 'New Person',
+	'view_item' => 'View Person',
+	'search_item' => 'Search People',
+	'not_found' => 'No people found',
+	'not_found_in_trash' => 'No people found in trash',
+	'parent_item-colon' => 'Parent Person'
+	);
+
+	$args = array(
+		'labels' => $labels,'public' => true,
+		'has_archive' => true,
+		'publicly_queryable' => true,
+		'query_var' => true,
+		'slug' => 'person',
+		'capability_type' => 'post',
+		'hierarchical' => false,
+		'supports' => array(
+			'title',
+			'editor',
+			'excerpt',
+			'thumbnail',
+			'revisions'
+		),
+		'taxonomies' => array('category', 'post_tag'),
+		'menu_position' => 5,
+	    'exclude_from_search' => false
+	);
+
+	register_post_type( 'person', $args);
+}
 ?>
+
+<?php

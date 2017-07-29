@@ -8,65 +8,33 @@
 
 get_header();
 
-?>
+$personQuery = new WP_Query(array(
+        'post_type' => 'person',
+        'posts_per_page' => -1,
+        'post_status' => 'publish',
+        'order' => 'ASC'
+));
 
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+//echo "<pre>" . print_r($personQuery->posts,1) . "</pre>";
+
+?>
 
     <h2 id="who-we-are-title">Meet the team!</h2>
 
     <div class="profiles-container">
-        <div>
-            <a href=""><img src="<?php echo get_template_directory_uri();?>/assets/images/william.png" alt="" height="131px" width="106px"></a>
-            <p>William Henry<br> Griffin</p>
-        </div>
+
+        <?php if ($personQuery->have_posts()) {
+
+            foreach ($personQuery->posts as $post) { ?>
+                <div>
+                    <a href="<?php echo get_permalink($post->ID); ?>"><img src="<?php echo get_field('profile_picture'); ?>" alt="william-griffin" height="131px" width="106px"></a>
+                    <p><?php echo apply_filters('the_title', $post->post_title); ?></p>
+                </div>
 
 
-        <div>
-            <a href=""><img src="<?php echo get_template_directory_uri();?>/assets/images/taylor.png" alt="" height="131px" width="106px"></a>
-            <p>Taylor Lindores<br> Reeves</p>
-        </div>
-
-
-        <div>
-            <a href=""><img src="<?php echo get_template_directory_uri();?>/assets/images/robyn.jpg" alt="" height="131px" width="106px"></a>
-            <p>Robyn Piper</p>
-        </div>
-
-
-        <div>
-            <a href=""><img src="<?php echo get_template_directory_uri();?>/assets/images/olivia.jpg" alt="" height="131px" width="106px"></a>
-            <p>Olivia Schneck</p>
-        </div>
-
-
-        <div>
-            <a href=""><img src="<?php echo get_template_directory_uri();?>/assets/images/lauren.jpg" alt="" height="131px" width="106px"></a>
-            <p>Lauren Woods</p>
-        </div>
-
-
-        <div>
-            <a href=""><img src="<?php echo get_template_directory_uri();?>/assets/images/francesca.jpg" alt="" height="131px" width="106px"></a>
-            <p>Francesa Ware</p>
-        </div>
-
-
-        <div>
-            <a href=""><img src="<?php echo get_template_directory_uri();?>/assets/images/david.jpg" alt="" height="131px" width="106px"></a>
-            <p>David Brimelow</p>
-        </div>
-
-
-        <div>
-            <a href=""><img src="<?php echo get_template_directory_uri();?>/assets/images/stefano.jpg" alt="" height="131px" width="106px"></a>
-            <p>Stefano Paderi</p>
-        </div>
+        <?php } } ?>
 
     </div>
-
-
-<?php endwhile; ?>
-<?php endif; ?>
 
 <?php
 

@@ -5,7 +5,6 @@ get_header();
 // Template Name: index
 
 ?>
-
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
     <h1 class="slogan"><strong class="light-color">Cornwall</strong> business and innovation</h1>

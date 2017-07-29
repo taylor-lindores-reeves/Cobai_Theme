@@ -1,12 +1,12 @@
-<footer>
-    <div class="footer-container">
+
+    <footer class="footer-container">
         <div class="flexthis">
 
             <div class="footer-nav">
                 <ul>
                     <li><a href="/about-us">about us</a></li>
-                    <li><a href="/who-we-are">Who we are</a></li>
-                    <li><a href="/our-services">Our services</a></li>
+                    <li><a href="/who-we-are">who we are</a></li>
+                    <li><a href="/our-services">our services</a></li>
                 </ul>
             </div>
 
@@ -24,8 +24,8 @@
         <div class="footer-copyright">
             <p>2017 | A Cobai Ltd Website | Built and Powered by Lindores & Griffin</p>
         </div>
-    </div>
-</footer>
+    </footer>
+
 </body>
 
 </html>
