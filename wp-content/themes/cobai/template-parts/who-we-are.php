@@ -17,7 +17,7 @@ $personQuery = new WP_Query(array(
 
 ?>
 
-<h2 id="who-we-are-main-title">Meet the team!</h2>
+<h2 id="main-title">Meet the team!</h2>
 
 <div class="profiles-container">
 

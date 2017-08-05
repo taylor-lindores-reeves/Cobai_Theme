@@ -12,10 +12,18 @@ function enqueue_cobai_styles() { /** This is only seeming to work for the heade
 
 }
 
-
 add_action( 'wp_enqueue_scripts', 'enqueue_cobai_styles');
 
 ?>
+
+<?php
+add_action('get_header', 'my_filter_head');
+
+    function my_filter_head() {
+	    remove_action('wp_head', '_admin_bar_bump_cb');
+    }
+?>
+
 
 <?php
 
@@ -61,5 +69,3 @@ function create_posttype() {
 	register_post_type( 'person', $args);
 }
 ?>
-
-<?php

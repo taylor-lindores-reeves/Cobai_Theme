@@ -1,6 +1,6 @@
 
     <footer class="footer-container">
-        <div class="flexthis">
+        <div class="footer-inner">
 
             <div class="footer-nav">
                 <ul>
@@ -9,6 +9,8 @@
                     <li><a href="/our-services">our services</a></li>
                 </ul>
             </div>
+
+<!--            TODO add icons and make inline-->
 
             <div class="footer-address">
                 <p><strong>Office Address:</strong></p>
@@ -31,7 +33,6 @@
             <p>2017 | A Cobai Ltd Website | Built and Powered by Lindores & Griffin</p>
         </div>
     </footer>
-<?php wp_footer() ?>
 </body>
 
 </html>
