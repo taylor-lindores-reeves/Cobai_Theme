@@ -11,17 +11,19 @@ get_header();
 ?>
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-    <div class="about-page-content">
-        <h4 class="about-page-title">We are a <a href="/who-we-are">team of 10</a> with a combined experience of over 10 years of running a company.<br/>
-            The connections and knowledge we have gained from networking and working with <br/>
-            a variety of companies in different industries has enabled us to feel confident in<br/>
-            providing you with the best possible business solutions service we can.<br/>
-        </h4>
-    </div>
+	<?php the_content(); ?>
 
-	<div class="content-image">
-        <img src="<?php echo get_template_directory_uri();?>/assets/images/services.jpg" alt="" height="55%" width="55%">
-	</div>
+    <div class="about-us-banner">
+		<?php
+		$img_src = wp_get_attachment_image_url( $attachment_id, 'small' );
+		$img_srcset = wp_get_attachment_image_srcset( $attachment_id, 'small' );
+		?>
+
+        <img src="<?php echo get_template_directory_uri();?>/assets/images/services.jpg"
+             srcset="<?php echo get_template_directory_uri();?>/assets/images/services-medium.jpg 1366w"
+             srcset="<?php echo get_template_directory_uri();?>/assets/images/services-small.jpg 960w"
+             sizes="(max-width: 1040px) 100vw, (max-width: 900px) 50vw" alt="banner">
+    </div>
 
 <?php endwhile; ?>
 <?php endif; ?>
