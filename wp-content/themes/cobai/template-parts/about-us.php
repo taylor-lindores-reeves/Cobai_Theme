@@ -11,18 +11,10 @@ get_header();
 ?>
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-	<?php the_content(); ?>
 
-    <div class="about-us-banner">
-		<?php
-		$img_src = wp_get_attachment_image_url( $attachment_id, 'small' );
-		$img_srcset = wp_get_attachment_image_srcset( $attachment_id, 'small' );
-		?>
-
-        <img src="<?php echo get_template_directory_uri();?>/assets/images/services.jpg"
-             srcset="<?php echo get_template_directory_uri();?>/assets/images/services-medium.jpg 1366w"
-             srcset="<?php echo get_template_directory_uri();?>/assets/images/services-small.jpg 960w"
-             sizes="(max-width: 1040px) 100vw, (max-width: 900px) 50vw" alt="banner">
+    <div class="about-page-content">
+        <h4 class="about-page-title">We are a <a href="/who-we-are">team of 10</a> with a combined experience of over 10 years of running a company. The connections and knowledge we have gained from networking and working with a variety of companies in different industries has enabled us to feel confident in providing you with the best possible business solutions service we can.</h4>
+        <img class="about-us-banner" src="<?php echo get_template_directory_uri();?>/assets/images/services-667x409.jpg" alt="services" />
     </div>
 
 <?php endwhile; ?>

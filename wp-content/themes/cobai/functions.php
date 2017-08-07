@@ -69,3 +69,4 @@ function create_posttype() {
 	register_post_type( 'person', $args);
 }
 ?>
+
