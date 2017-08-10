@@ -16,11 +16,12 @@ Text Domain: cobai
 body, html {
     width: 100%;
     height: 100%;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     overflow-x: hidden;
+    overflow-y: scroll;
     color: white;
-    font-family: "Avenir Next", sans-serif;
+    font-family: "Avenir Next", Arial, sans-serif;
 }
 
 body {
@@ -29,184 +30,118 @@ body {
     -moz-background-size: contain;
     -o-background-size: contain;
     background-size: cover;
-    height: 100vh;
-    width: 100vw;
-    position: absolute;
-    z-index: -9999;
-}
-
-/********************** END OF BODY **********************/
-
-/********************** CONTACT FORM START **********************/
-
-.contact-container {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    z-index: 99;
-}
-
-/********************** END OF CONTACT FORM **********************/
-
-/********************** START OF COMPONENT **********************/
-
-
-
-@font-face {
-    font-family: 'ecoicon';
-    src:url('assets/ecoicons/ecoicon.eot');
-    src:url('assets/ecoicons/ecoicon.eot?#iefix') format('embedded-opentype'),
-    url('assets/ecoicons/ecoicon.woff') format('woff'),
-    url('assets/ecoicons/ecoicon.ttf') format('truetype'),
-    url('assets/ecoicons/ecoicon.svg#ecoicon') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-a {
-    text-decoration: none;
-}
-
-#set-1 {
-    background: transparent;
-}
-
-.hi-icon-wrap {
-    display: flex;
-    justify-content: space-around;
-    position: absolute;
-    left: 0;
-    top: 15%;
-    flex-wrap: wrap;
-    width: 50%;
-}
-
-.hi-icon {
-    display: inline-block;
-    font-size: 0px;
-    cursor: pointer;
-    margin: 15px 60px;
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    text-align: center;
     position: relative;
     z-index: 1;
 }
 
-.hi-icon:after {
-    pointer-events: none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    content: '';
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
+* {
+    -webkit-overflow-scrolling: touch;
 }
 
-.hi-icon:before {
-    font-family: 'ecoicon';
-    speak: none;
-    font-size: 48px;
-    line-height: 90px;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    display: block;
-    -webkit-font-smoothing: antialiased;
-}
-
-.hi-icon-location:before {
-    content: "\e00e";
-}
-
-.hi-icon-videos:before {
-    content: "\e005";
-}
-
-.hi-icon-mail:before {
-    content: "\e00d";
-}
+/********************** END OF BODY **********************/
 
 
-/* Effect 1 */
-.hi-icon-effect-1 .hi-icon {
-    box-shadow: 0 0 0 4px #F5F5F5;
-    -webkit-transition: color 0.3s;
-    -moz-transition: color 0.3s;
-    transition: color 0.5s;
-}
+/********************** CONTACT FORM START **********************/
 
-.hi-icon-effect-1 .hi-icon:after {
-    top: -2px;
-    left: -2px;
-    padding: 2px;
-    z-index: -1;
-    background: #F5F5F5;
-    -webkit-transition: -webkit-transform 0.2s, opacity 0.3s;
-    -moz-transition: -moz-transform 0.2s, opacity 0.3s;
-    transition: transform 0.2s, opacity 0.3s;
-}
+/********************** END OF CONTACT FORM **********************/
 
-/* Effect 1a */
-.hi-icon-effect-1a .component-videos {
-    color: #00a0d2;
-}
-
-.hi-icon-effect-1a .component-location {
-    color: #00a0d2;
-}
-
-.hi-icon-effect-1a .component-mail {
-    color: #00a0d2;
-}
-
-
-.hi-icon-effect-1a .hi-icon:hover {
-    color: #F5F5F5;
-}
-
-.hi-icon-effect-1a .hi-icon:hover:after {
-    -webkit-transform: scale(1.3);
-    -moz-transform: scale(1.3);
-    -ms-transform: scale(1.3);
-    transform: scale(1.3);
-    transition: 1s;
-    opacity: 0;
-}
-
-.inner-container-names {
-    text-align: center;
-    display: grid;
-    width: 100%;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-.inner-container-names>p {
-    margin: 0;
-    padding: 0;
-}
-
-@media screen and (max-width: 800px) {
-
-    .hi-icon {
-        margin: 15px !important;
-    }
-
-    .container > section {
-        padding: 20em 1em;
-    }
-
-}
-
-/********************** END OF COMPONENT **********************/
 
 /********************** START OF HEADER **********************/
 
-.header-nav {
+.site-header {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    transition: background-color .3s ease-out;
+}
+
+.site-header__menu-icon {
+    width: 20px;
+    height: 19px;
+    position: absolute;
+    top: 15%;
+    right: 5%;
+    z-index: 10;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.site-header__menu-icon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 3px;
+    background-color: #FFF;
+    transform-origin: 0 0;
+    transition: transform .3s ease-out;
+    cursor: pointer;
+}
+
+.site-header__menu-icon__middle {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 20px;
+    height: 3px;
+    background-color: #FFF;
+    transition: all .3s ease-out;
+    transform-origin: 0 50%;
+    cursor: pointer;
+}
+
+.site-header__menu-icon::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 20px;
+    height: 3px;
+    background-color: #FFF;
+    transform-origin: 0 100%;
+    transition: transform .3s ease-out;
+    cursor: pointer;
+}
+
+.site-header__menu-icon--close-x::before {
+    transform: rotate(45deg) scaleX(1.25);
+}
+
+.site-header__menu-icon--close-x .site-header__menu-icon__middle {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.site-header__menu-icon--close-x::after {
+    transform: rotate(-45deg) scaleX(1.25) translateY(1px);
+}
+
+.site-header__menu-content {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.2);
+    transition: all .3s ease-out;
+    position: relative;
+    padding-top: 90px;
+    text-align: center;
+    z-index: -9999;
+}
+
+.site-header__menu-content--is-visible {
+    transform: scale(1);
+    opacity: 1;
+    z-index: 9;
+    visibility: visible;
+}
+
+.site-header--is-expanded {
+    background-color: rgba(255, 255, 255, .9);
+    z-index: 9;
+
+}
+
+.site-header-nav {
     position: absolute;
     display: flex;
     margin-top: 2rem;
@@ -214,13 +149,13 @@ a {
     width: 100%;
 }
 
-.header-main-logo {
+.site-header-main-logo {
     height: 75px;
     margin-left: 5rem;
+    z-index: 1;
 }
 
-
-.header-btn {
+.site-header-btn {
     font-size: 1.5rem;
     background: transparent;
     border: none;
@@ -230,27 +165,29 @@ a {
     margin-right: 6.5rem;
 }
 
-.header-btn:hover {
+.site-header-btn:hover {
     color: rgba(123, 254, 255, 1);
     transition:
                 color ease-in .1s .1s;
 }
 
-.header-btn:focus {
+.site-header-btn:focus {
     outline: 0;
 }
 
-/********************** END OF HEADER **********************/
 
+/********************** END OF HEADER **********************/
 
 /********************** START OF HOME **********************/
 
-h1.slogan {
+h1.home-title {
     font-weight: 400;
+    margin: 0;
+    padding: 0;
 }
 
-h2.slogan-two {
-    margin-bottom: 4rem;
+h2.home-subtitle {
+    margin-bottom: 1rem;
     font-weight: 400;
 }
 
@@ -268,11 +205,11 @@ strong.light-color {
 
 /********************** END OF HOME ***********************/
 
-/********************** START OF ABOUT US ***********************/
+/********************** START OF WHAT WE DO ***********************/
 
-.about-page-title {
+.what-title {
     position: absolute;
-    margin-left: 5rem;
+    margin: 0 0 0 5rem;
     padding: 0;
     top: 15%;
     font-weight: 400;
@@ -282,17 +219,17 @@ strong.light-color {
     width: 60%;
 }
 
-.about-page-title a {
+.what-title a {
     text-decoration: underline;
     color: inherit;
 }
 
-.about-page-title a:hover {
+.what-title a:hover {
     color: #F5F5F5;
     transition: color ease-in-out 0.2s;
 }
 
-.about-us-banner {
+.what-we-do-banner {
     margin-left: 5rem;
     position: absolute;
     top: 35%;
@@ -300,22 +237,23 @@ strong.light-color {
 }
 
 
-/********************** END OF ABOUT US ***********************/
+/********************** END OF WHAT WE DO ***********************/
 
 /********************** START OF WHO WE ARE ***********************/
 
-#main-title {
-    color: #254F6D;
-    position: relative;
-    top: 15%;
+.who-title {
+    color: #96C7DA;
+    position: absolute;
+    top: 16%;
     font-weight: 400;
-    left: 5rem;
+    font-size: 2em;
+    margin-left: 5rem;
 }
 
 .profile-titles {
     margin: 0;
     padding: 0;
-    line-height: 10px;
+    line-height: 1.25rem;
 }
 
 p.post-title {
@@ -339,7 +277,6 @@ p.job-title {
 
 .profiles-container {
     display: grid;
-
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     width: 50%;
     text-align: center;
@@ -355,7 +292,6 @@ p.job-title {
     -o-transform: scale(1.1, 1.1);
     transform: scale(1.1, 1.1);
     transform-origin: bottom;
-    filter: grayscale(0%);
 }
 
 /********************** END OF WHO WE ARE ***********************/
@@ -409,7 +345,6 @@ p.job-title {
 /********************** START OF FOOTER ***********************/
 
 .footer-container {
-    background: #aadddd;
     background: -moz-linear-gradient(top, transparent 50%, rgba(0,0,0, 0.05) 100%);
     background: -webkit-linear-gradient(top, transparent 50%, rgba(0,0,0, 0.05) 100%);
     background: -o-linear-gradient(top, transparent 50%, rgba(0,0,0, 0.05) 100%);
@@ -464,24 +399,28 @@ p.job-title {
 
 /********************** MEDIA QUERIES ***********************/
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1024px) { /* Large Screen Media Query */
+    .footer-container {
+        display: none;
+    }
+
     .footer-address p {
         display: none;
     }
 
-    .header-main-logo {
+    .site-header-main-logo {
         height: 60px;
     }
 
-    h1.slogan {
+    h1.home-title {
         font-size: 1.8em;
     }
 
-    h2.slogan {
+    h2.home-title {
         font-size: 1.3em;
     }
 
-    .about-page-title {
+    .what-title {
         top: 5%;
         width: 90%;
         position: absolute;
@@ -489,103 +428,181 @@ p.job-title {
         line-height: 3rem;
     }
 
-    .about-us-banner {
+    .what-we-do-banner {
         top: 30%;
         width: 80vw;
     }
 
-}
-
-
-@media only screen and (max-width: 900px) {
-
-    .footer-nav ul li {
-        display: block;
-        line-height: 30px;
+    .site-header__menu-icon {
+        opacity: 1;
     }
 
-    .footer-address {
+    .site-header-btn {
         display: none;
     }
 
-    h4.about-page-title {
-        line-height: 1.6rem;
-        font-size: .8rem;
-        width: 60%;
-    }
-
-    .about-us-banner {
-        top: 50%;
-    }
 }
 
 
-@media only screen and (max-device-width : 667px) {
-    .footer-container {
-        display: none;
+@media only screen and (max-width : 800px) { /* Medium Screen Media Query */
+
+    * {
+        /*CSS transitions*/
+        -o-transition-property: none !important;
+        -moz-transition-property: none !important;
+        -ms-transition-property: none !important;
+        -webkit-transition-property: none !important;
+        transition-property: none !important;
+        /*CSS transforms*/
+        -o-transform: none !important;
+        -moz-transform: none !important;
+        -ms-transform: none !important;
+        -webkit-transform: none !important;
+        transform: none !important;
+        /*CSS animations*/
+        -webkit-animation: none !important;
+        -moz-animation: none !important;
+        -o-animation: none !important;
+        -ms-animation: none !important;
+        animation: none !important;
     }
 
-    h1.slogan, h2.slogan {
-        position: relative;
-        top: 40%;
-        width: 300px;
-    }
-
-    h4.about-page-title {
-        text-align: center;
-        margin:  0 1rem;
-        width: 100%;
-    }
-
-    .about-page-content {
-        width: 100vw;
-    }
-
-    .about-us-banner {
-        width: 100%;
-        top: 55%;
-        margin-left: 0;
-    }
-
-    .header-btn {
-        display: none;
-    }
-}
-
-
-@media only screen and (max-device-width : 375px) {
-    .header-main-logo {
+    .site-header-main-logo {
         height: 35px;
+        position: relative;
+        top: -20px;
         margin-left: 1rem;
     }
 
     .home-content {
         width: 100vw;
         margin: 0 auto;
-        border: 1px solid red;
     }
 
-    h1.slogan, h2.slogan {
+    h1.home-title, h2.home-title {
         text-align: center;
-        width: 100%;
+        width: 50%;
     }
 
-    .video {
-        display: none;
+    iframe {
+        height: 40%;
+        width: 40%;
+        margin-left: 2rem;
     }
 
-    .footer-container {
-        display: none;
+    h4.what-title {
+        text-align: justify;
+        width: 65%;
+        top: 20%;
+        font-size: 1rem;
+        margin-left: 0;
+        line-height: 1rem;
     }
 
-    .about-page-content {
+    .what-we-do-banner {
+        width: 60%;
+        top: 50%;
+        margin: 5% 5% 5% 0;
+    }
+
+    .who-title {
+        top: 40%;
+    }
+
+    .profiles-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100vw, 1fr));
+    }
+
+    .profile-pics-container a > img {
+        width: 20%;
+        height: 20%;
+    }
+
+    .site-header--is-expanded {
+        position: fixed;
+        background-color: rgba(0, 0, 0, .8);
+    }
+
+}
+
+
+@media only screen and (max-width : 530px) { /* Small Screen Media Query */
+    body {
+        background-size: cover;
+    }
+
+    .site-header__menu-icon {
+        z-index: 9999;
+    }
+
+    .site-header-main-logo {
+        height: 35px;
+        position: relative;
+        top: -10px;
+        margin-left: 1rem;
+    }
+
+    .home-content {
         width: 100vw;
         margin: 0 auto;
-        border: 1px solid red;
     }
 
-    .about-page-title {
+    h1.home-title, h2.home-title {
         text-align: center;
         width: 100%;
     }
+
+    iframe {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .what-content {
+        width: 100%;
+    }
+
+    h4.what-title {
+        text-align: justify;
+        width: 90%;
+        top: 20%;
+        font-size: 1rem;
+        line-height: normal;
+        margin-left: 1rem;
+    }
+
+    .who-title {
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+        font-size: 2rem;
+        top: 15%;
+    }
+
+    .what-we-do-banner {
+        width: 100%;
+        top: 55%;
+        margin-left: 0;
+    }
+
+    .profile-titles p {
+        font-size: 1.3rem;
+    }
+
+    .profiles-container {
+        margin-left: 0;
+    }
+
+    .profile-pics-container {
+        width: 100vw;
+        text-align: center;
+        padding: 2rem 0;
+    }
+
+    .profile-pics-container a > img {
+        width: 60%;
+        height: 60%;
+    }
+
+
 }

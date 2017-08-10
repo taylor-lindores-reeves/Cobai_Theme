@@ -17,14 +17,14 @@ $personQuery = new WP_Query(array(
 
 ?>
 
-<h2 id="main-title">Meet the team!</h2>
+<h2 class="who-title">Meet the team!</h2>
 
 <div class="profiles-container">
 
 	<?php if ($personQuery->have_posts()) {
 
 		foreach ($personQuery->posts as $post) { ?>
-            <div>
+            <div class="profile-pics-container">
                 <a href="<?php echo get_permalink($post->ID); ?>"><img src="<?php echo get_field('profile_picture'); ?>" alt="team-members" height="131px" width="106px"></a>
                 <div class="profile-titles">
                     <p class="post-title"><?php echo apply_filters('the_title', $post->post_title); ?></p>
@@ -41,4 +41,3 @@ $personQuery = new WP_Query(array(
 get_footer();
 
 ?>
-

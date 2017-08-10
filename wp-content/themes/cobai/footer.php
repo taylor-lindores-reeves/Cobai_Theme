@@ -3,9 +3,8 @@
 
             <div class="footer-nav">
                 <ul>
-                    <li><a href="/who-we-are">WHO</a></li>
-                    <li><a href="/about-us">WHAT</a></li>
-                    <li><a href="/our-services">WHERE</a></li>
+                    <li class="nav-bar"><a href="/who-we-are">WHO</a></li>
+                    <li class="nav-bar"><a href="/what-we-do">WHAT</a></li>
                 </ul>
             </div>
 
@@ -16,6 +15,7 @@
         </div>
     </footer>
 
+</div> <!--    wrapper div-->
 </body>
 
 </html>

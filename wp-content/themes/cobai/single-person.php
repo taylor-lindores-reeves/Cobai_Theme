@@ -8,26 +8,27 @@
             <img src="<?php echo get_field('profile_picture') ?>" alt="profile-picture" width="212px" height="262px">
         </div>
 
-        <div class="social-media-icons">
-	        <?php if(get_field('facebook')) { ?>
-                <a href="<?php echo get_field('facebook'); ?>">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/facebook.svg" height="33px" width="33px" alt="Icon made by Freepik from www.flaticon.com">
-                </a>
-	        <?php } ?>
+        <div class="social-media-icons-wrapper">
+            <div class="social-media-icons">
+                <?php if(get_field('facebook')) { ?>
+                    <a href="<?php echo get_field('facebook'); ?>">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/facebook.svg" height="33px" width="33px" alt="Icon made by Freepik from www.flaticon.com">
+                    </a>
+                <?php } ?>
 
-	        <?php if(get_field('twitter')) { ?>
-                <a href="<?php echo get_field('twitter'); ?>">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/twitter.svg" height="33px" width="33px" alt="Icon made by Freepik from www.flaticon.com">
-                </a>
-	        <?php } ?>
+                <?php if(get_field('twitter')) { ?>
+                    <a href="<?php echo get_field('twitter'); ?>">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/twitter.svg" height="33px" width="33px" alt="Icon made by Freepik from www.flaticon.com">
+                    </a>
+                <?php } ?>
 
-            <?php if(get_field('linkedin')) { ?>
-                <a href="<?php echo get_field('linkedin'); ?>">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/linkedin.svg" height="33px" width="33px" alt="Icon made by Freepik from www.flaticon.com">
-                </a>
-            <?php } ?>
-
-        </div>
+                <?php if(get_field('linkedin')) { ?>
+                    <a href="<?php echo get_field('linkedin'); ?>">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/linkedin.svg" height="33px" width="33px" alt="Icon made by Freepik from www.flaticon.com">
+                    </a>
+                <?php } ?>
+            </div>
+        </div
 
         <div class="person-aside-container">
             <h1><?php echo get_field('name') ?></h1>
