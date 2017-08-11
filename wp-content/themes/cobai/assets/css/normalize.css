@@ -198,14 +198,6 @@ svg:not(:root) {
    ========================================================================== */
 
 /**
- * Address margin not present in IE 8/9 and Safari.
- */
-
-figure {
-  margin: 1em 40px;
-}
-
-/**
  * Address differences between Firefox and other browsers.
  */
 
@@ -252,8 +244,8 @@ samp {
 button,
 input,
 optgroup,
-select,
-textarea {
+select
+{
   color: inherit; /* 1 */
   font: inherit; /* 2 */
   margin: 1rem; /* 3 */
@@ -393,9 +385,6 @@ legend {
  * Remove default vertical scrollbar in IE 8/9/10/11.
  */
 
-textarea {
-  overflow: auto;
-}
 
 /**
  * Don't inherit the `font-weight` (applied by a rule above).

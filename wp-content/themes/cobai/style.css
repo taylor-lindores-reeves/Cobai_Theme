@@ -20,7 +20,7 @@ body, html {
     padding: 0;
     overflow-x: hidden;
     overflow-y: scroll;
-    color: white;
+    color: #f5f5f5;
     font-family: "Avenir Next", Arial, sans-serif;
 }
 
@@ -30,7 +30,7 @@ body {
     -moz-background-size: contain;
     -o-background-size: contain;
     background-size: cover;
-    position: relative;
+    position: fixed;
     z-index: 1;
 }
 
@@ -43,15 +43,116 @@ body {
 
 /********************** CONTACT FORM START **********************/
 
-/********************** END OF CONTACT FORM **********************/
+.contact-form-container {
+    margin-left: 5rem;
+    line-height: 1px;
+    position: absolute;
+    top: 15%;
+    width: 450px;
+}
 
+.contact-form-title {
+    font-weight: 400;
+    font-size: 2rem;
+    color: #254F6D;
+}
+
+.contact-form-container label {
+    color: #96C7DA;
+}
+
+.name-input, .email-input, .subject-input {
+    background-color: #3a3a3a;
+    border: none;
+    padding: 5px;
+}
+
+.contact-form-content input, .message-input {
+    margin: 10px 10px 10px 0;
+    color: black;
+}
+
+.contact-form-content strong {
+    font-weight: 400;
+    color: firebrick;
+}
+
+.message-input {
+    background-color: #3a3a3a;
+    width: 100%;
+    height: 150px;
+    max-width: 450px;
+    max-height: 200px;
+    padding: 15px 0 0 5px;
+    border: none;
+}
+
+input.wpcf7-submit {
+    background-color: rgba(123, 254, 255, 1);
+    border: none;
+    float: left;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #3a3a3a;
+}
+
+span.captcha-text {
+    display: block;
+    line-height: 20px;
+    left: 183px;
+    position: relative;
+}
+
+p > span.captcha-118 input {
+    display: inline;
+    float: right;
+    background-color: #f5f5f5;
+    border: 3px solid #96C7DA;
+    border-right: none;
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    height: 20px;
+    outline: none;
+}
+p > img {
+    float: right;
+    display: inline;
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    height: 20px;
+    position: relative;
+    top: 1px;
+    border: 3px solid #254F6D;
+    border-left: none;
+}
+
+div.wpcf7-response-output {
+    width: 450px;
+    height: 50px;
+    margin: 0;
+    padding: 5px;
+    position: relative;
+    line-height: normal;
+    top: 25px;
+}
+
+.wpcf7-not-valid-tip {
+    position: relative;
+    top: 100px;
+    float: right;
+    clear: right;
+}
+
+/********************** END OF CONTACT FORM **********************/
 
 /********************** START OF HEADER **********************/
 
 .site-header {
     position: absolute;
     width: 100%;
-    z-index: 2;
+    z-index: -2;
     transition: background-color .3s ease-out;
 }
 
@@ -59,7 +160,7 @@ body {
     width: 20px;
     height: 19px;
     position: absolute;
-    top: 15%;
+    top: 13%;
     right: 5%;
     z-index: 10;
     opacity: 0;
@@ -73,7 +174,7 @@ body {
     left: 0;
     width: 20px;
     height: 3px;
-    background-color: #FFF;
+    background-color: #F5f5f5;
     transform-origin: 0 0;
     transition: transform .3s ease-out;
     cursor: pointer;
@@ -85,7 +186,7 @@ body {
     left: 0;
     width: 20px;
     height: 3px;
-    background-color: #FFF;
+    background-color: #F5f5f5;
     transition: all .3s ease-out;
     transform-origin: 0 50%;
     cursor: pointer;
@@ -98,7 +199,7 @@ body {
     left: 0;
     width: 20px;
     height: 3px;
-    background-color: #FFF;
+    background-color: #F5f5f5;
     transform-origin: 0 100%;
     transition: transform .3s ease-out;
     cursor: pointer;
@@ -123,9 +224,48 @@ body {
     transform: scale(1.2);
     transition: all .3s ease-out;
     position: relative;
-    padding-top: 90px;
+    padding-top: 10%;
     text-align: center;
     z-index: -9999;
+    width: 100%;
+}
+
+.site-header__btn-container {
+    border-bottom: 1px solid #3a3a3a;
+    padding: 5px;
+}
+
+.site-header__btn-container a {
+    border: none;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #f5f5f5;
+    padding: 2px;
+    text-decoration: none;
+}
+
+.site-header__menu-content ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    bottom: 0;
+    position: relative;
+}
+
+.primary-nav ul li a {
+    text-decoration: none;
+    color: #3a3a3a;
+}
+
+.primary-nav ul li:hover {
+    background-color: #f5f5f5;
+}
+
+.primary-nav ul li {
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #3a3a3a;
+    padding: 5px;
 }
 
 .site-header__menu-content--is-visible {
@@ -138,10 +278,9 @@ body {
 .site-header--is-expanded {
     background-color: rgba(255, 255, 255, .9);
     z-index: 9;
-
 }
 
-.site-header-nav {
+.site-header-container {
     position: absolute;
     display: flex;
     margin-top: 2rem;
@@ -152,7 +291,7 @@ body {
 .site-header-main-logo {
     height: 75px;
     margin-left: 5rem;
-    z-index: 1;
+    z-index: -99;
 }
 
 .site-header-btn {
@@ -178,7 +317,9 @@ body {
 
 /********************** END OF HEADER **********************/
 
+
 /********************** START OF HOME **********************/
+
 
 h1.home-title {
     font-weight: 400;
@@ -215,8 +356,8 @@ strong.light-color {
     font-weight: 400;
     font-size: 1.25rem;
     color: #254F6D;
-    line-height: 2rem;
-    width: 60%;
+    line-height: 1.5rem;
+    width: 50%;
 }
 
 .what-title a {
@@ -229,11 +370,13 @@ strong.light-color {
     transition: color ease-in-out 0.2s;
 }
 
-.what-we-do-banner {
+.what-banner {
+    background: url("assets/images/what-banner-800x291.jpg") no-repeat;
     margin-left: 5rem;
+    top: 40%;
     position: absolute;
-    top: 35%;
-    width: 50%;
+    width: 800px;
+    height: 291px;
 }
 
 
@@ -242,7 +385,7 @@ strong.light-color {
 /********************** START OF WHO WE ARE ***********************/
 
 .who-title {
-    color: #96C7DA;
+    color: #254F6D;
     position: absolute;
     top: 16%;
     font-weight: 400;
@@ -300,21 +443,21 @@ p.job-title {
 
 .person-container {
     margin-left: 5rem;
-    width: 50%;
-    position: relative;
-    top: 15%;
+    width: 60%;
+    position: absolute;
+    top: 16%;
     font-weight: 100;
 }
 
-.person-pic-container {
-    width: 212px;
-    height: 262px;
+figure {
+    margin: 0 1rem 0 0;
     float: left;
-    margin-right: 1rem;
+    height: 262px;
 }
 
-.person-aside-container {
-    position: relative;
+.person-container p {
+    clear: right;
+    color: #f5f5f5;
 }
 
 .person-aside-container h1, h2, h3 {
@@ -324,21 +467,39 @@ p.job-title {
 }
 
 .person-aside-container h1 {
+    color: #f5f5f5;
+}
+
+.person-aside-container h2 {
+    color: #96C7DA;
+    font-weight: 400;
+}
+
+.person-aside-container h3 {
     color: #3A5F7F;
+    font-weight: 400;
 }
 
 .social-media-icons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    position: relative;
     width: 212px;
-    margin-left: 5rem;
+    display: flex;
+    justify-content: space-between;
+    clear: left;
+    float: left;
+    padding: 1rem 1rem 0 0;
 }
 
 .social-media-icons a {
     flex: 1;
+    text-align: center;
 }
+
+.social-media-icons a:hover {
+    transform: greyscale(100%);
+}
+
+
+
 
 /********************** END OF SINGLE PERSON ***********************/
 
@@ -398,8 +559,37 @@ p.job-title {
 /********************** END OF FOOTER ***********************/
 
 /********************** MEDIA QUERIES ***********************/
+@media only screen and (max-width: 1280px) { /* Very Large Media Query */
+    .what-banner {
+        background: url(assets/images/what-banner-640x233.jpg) no-repeat;
+    }
+}
 
 @media only screen and (max-width: 1024px) { /* Large Screen Media Query */
+    .what-content {
+        width: 100vw;
+        margin: 0 auto;
+    }
+
+    .what-banner {
+        background: url(assets/images/what-banner-960x545.jpg) no-repeat;
+        width: 100%;
+        height: 100%;
+        margin-left: 0;
+        top: 20%;
+        background-size: contain;
+    }
+
+    .what-title {
+        text-align: justify;
+        top: 70%;
+        width: 90%;
+        margin: 0 5%;
+        font-size: 2rem;
+        line-height: 3rem;
+    }
+
+
     .footer-container {
         display: none;
     }
@@ -420,19 +610,6 @@ p.job-title {
         font-size: 1.3em;
     }
 
-    .what-title {
-        top: 5%;
-        width: 90%;
-        position: absolute;
-        font-size: 2rem;
-        line-height: 3rem;
-    }
-
-    .what-we-do-banner {
-        top: 30%;
-        width: 80vw;
-    }
-
     .site-header__menu-icon {
         opacity: 1;
     }
@@ -445,26 +622,16 @@ p.job-title {
 
 
 @media only screen and (max-width : 800px) { /* Medium Screen Media Query */
+    body {
+        background-size: cover;
+    }
 
     * {
-        /*CSS transitions*/
-        -o-transition-property: none !important;
-        -moz-transition-property: none !important;
-        -ms-transition-property: none !important;
-        -webkit-transition-property: none !important;
-        transition-property: none !important;
-        /*CSS transforms*/
         -o-transform: none !important;
         -moz-transform: none !important;
         -ms-transform: none !important;
         -webkit-transform: none !important;
         transform: none !important;
-        /*CSS animations*/
-        -webkit-animation: none !important;
-        -moz-animation: none !important;
-        -o-animation: none !important;
-        -ms-animation: none !important;
-        animation: none !important;
     }
 
     .site-header-main-logo {
@@ -472,6 +639,11 @@ p.job-title {
         position: relative;
         top: -20px;
         margin-left: 1rem;
+    }
+
+    .site-header--is-expanded {
+        position: fixed;
+        background-color: rgba(255, 255, 255, .2);
     }
 
     .home-content {
@@ -490,21 +662,6 @@ p.job-title {
         margin-left: 2rem;
     }
 
-    h4.what-title {
-        text-align: justify;
-        width: 65%;
-        top: 20%;
-        font-size: 1rem;
-        margin-left: 0;
-        line-height: 1rem;
-    }
-
-    .what-we-do-banner {
-        width: 60%;
-        top: 50%;
-        margin: 5% 5% 5% 0;
-    }
-
     .who-title {
         top: 40%;
     }
@@ -519,15 +676,70 @@ p.job-title {
         height: 20%;
     }
 
-    .site-header--is-expanded {
-        position: fixed;
-        background-color: rgba(0, 0, 0, .8);
+    .what-banner {
+        background: url(assets/images/what-banner-800x455.jpg) no-repeat;
+        background-size: contain;
+        width: 100%;
+        top: 20%;
     }
 
+    .what-title {
+        text-align: justify;
+        font-size: 1rem;
+        margin-right: 25%;
+        margin-left: 5%;
+        margin-bottom: 10%;
+        line-height: normal;
+        width: 70%;
+        top: 160%;
+
+    }
 }
 
-
 @media only screen and (max-width : 530px) { /* Small Screen Media Query */
+    .contact-form-container {
+        margin-left: 0;
+        width: 100vw;
+    }
+
+    .contact-form-title {
+        margin-left: 1rem;
+    }
+
+    .contact-form-container label {
+        margin-left: 1rem;
+    }
+
+    .message-input {
+        background-color: #3a3a3a;
+        width: 90%;
+        height: 100%;
+        padding: 5%;
+        float: left;
+    }
+
+    input.wpcf7-submit {
+        font-size: 2rem;
+        font-weight: 500;
+        float: right;
+    }
+
+    span.captcha-text {
+        display: none;
+    }
+
+    p > span.captcha-118 input {
+        float: left;
+        border: 3px solid firebrick;
+        margin-top: 1px;
+    }
+
+    p > img {
+        float: left;
+        border: 3px solid #3A5F7F;
+    }
+
+
     body {
         background-size: cover;
     }
@@ -562,13 +774,24 @@ p.job-title {
         width: 100%;
     }
 
+    .what-content {
+        width: 100%;
+    }
+
+    div.what-banner {
+        background: url(assets/images/what-banner-375x135.jpg) no-repeat;
+        background-size: contain;
+        width: 100%;
+        height: 100%;
+        top: 20%;
+    }
+
     h4.what-title {
         text-align: justify;
         width: 90%;
-        top: 20%;
+        top: 50%;
         font-size: 1rem;
         line-height: normal;
-        margin-left: 1rem;
     }
 
     .who-title {
@@ -577,12 +800,6 @@ p.job-title {
         margin-left: 0;
         font-size: 2rem;
         top: 15%;
-    }
-
-    .what-we-do-banner {
-        width: 100%;
-        top: 55%;
-        margin-left: 0;
     }
 
     .profile-titles p {
@@ -604,5 +821,38 @@ p.job-title {
         height: 60%;
     }
 
+    .person-container {
+        text-align: center;
+        margin-left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .person-container img {
+        order: 0;
+    }
+
+    .social-media-icons {
+        text-align: center;
+        padding: 0;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        order: 1;
+        padding-bottom: 5%;
+    }
+
+    div.person-container h1 {
+        padding: 10px 10px 0 10px;
+    }
+
+    div.person-container p {
+        width: 90%;
+        text-align: justify;
+        margin: 0 5% 5% 5%;
+
+    }
 
 }

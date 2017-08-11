@@ -59,7 +59,8 @@ function create_posttype() {
 			'editor',
 			'excerpt',
 			'thumbnail',
-			'revisions'
+			'revisions',
+			'page-attributes'
 		),
 		'taxonomies' => array('category', 'post_tag'),
 		'menu_position' => 5,

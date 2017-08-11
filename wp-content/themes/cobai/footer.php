@@ -8,14 +8,12 @@
                 </ul>
             </div>
 
-<!--            TODO add icons and make inline-->
-
         <div class="footer-copyright">
             <p>2017 | A Cobai Ltd Website | Built and Powered by Lindores & Griffin</p>
         </div>
     </footer>
 
-</div> <!--    wrapper div-->
+
 </body>
 
 </html>
