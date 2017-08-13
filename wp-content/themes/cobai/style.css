@@ -69,7 +69,8 @@ body {
 
 .contact-form-content input, .message-input {
     margin: 10px 10px 10px 0;
-    color: black;
+    color: #F5F5F5;
+    font-weight: 500;
 }
 
 .contact-form-content strong {
@@ -90,42 +91,10 @@ body {
 input.wpcf7-submit {
     background-color: rgba(123, 254, 255, 1);
     border: none;
-    float: left;
+    float: right;
     font-size: 2rem;
     font-weight: 700;
     color: #3a3a3a;
-}
-
-span.captcha-text {
-    display: block;
-    line-height: 20px;
-    left: 183px;
-    position: relative;
-}
-
-p > span.captcha-118 input {
-    display: inline;
-    float: right;
-    background-color: #f5f5f5;
-    border: 3px solid #96C7DA;
-    border-right: none;
-    margin: 0;
-    padding: 0;
-    width: 100px;
-    height: 20px;
-    outline: none;
-}
-p > img {
-    float: right;
-    display: inline;
-    margin: 0;
-    padding: 0;
-    width: 100px;
-    height: 20px;
-    position: relative;
-    top: 1px;
-    border: 3px solid #254F6D;
-    border-left: none;
 }
 
 div.wpcf7-response-output {
@@ -145,6 +114,10 @@ div.wpcf7-response-output {
     clear: right;
 }
 
+.rc-anchor {
+    float: right;
+}
+
 /********************** END OF CONTACT FORM **********************/
 
 /********************** START OF HEADER **********************/
@@ -154,6 +127,44 @@ div.wpcf7-response-output {
     width: 100%;
     z-index: -2;
     transition: background-color .3s ease-out;
+}
+
+
+.site-header-container {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.site-header-main-logo {
+    height: 75px;
+    z-index: -99;
+}
+
+.site-header-container a {
+    text-decoration: none;
+    color: #f5f5f5;
+
+}
+
+.site-header-container a:hover {
+    color: #96C7DA;
+    transition: color 100ms ease-in;
+}
+
+.site-header-container a:last-child {
+    flex: 0 10%;
+    text-shadow: 2px 2px 2px 2px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.site-header-container a:last-child:hover {
+    color: rgba(123, 254, 255, 1);
 }
 
 .site-header__menu-icon {
@@ -244,6 +255,10 @@ div.wpcf7-response-output {
     text-decoration: none;
 }
 
+.site-header__menu-content {
+    background-color: rgba(0, 0, 0, .5);
+}
+
 .site-header__menu-content ul {
     list-style: none;
     text-align: center;
@@ -255,16 +270,15 @@ div.wpcf7-response-output {
 
 .primary-nav ul li a {
     text-decoration: none;
-    color: #3a3a3a;
+    color: #f5f5f5;
 }
 
-.primary-nav ul li:hover {
-    background-color: #f5f5f5;
+.primary-nav ul li a:hover {
+    color: #96C7DA;
+    text-decoration: underline;
 }
 
 .primary-nav ul li {
-    background-color: #f5f5f5;
-    border-bottom: 1px solid #3a3a3a;
     padding: 5px;
 }
 
@@ -276,44 +290,8 @@ div.wpcf7-response-output {
 }
 
 .site-header--is-expanded {
-    background-color: rgba(255, 255, 255, .9);
     z-index: 9;
 }
-
-.site-header-container {
-    position: absolute;
-    display: flex;
-    margin-top: 2rem;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.site-header-main-logo {
-    height: 75px;
-    margin-left: 5rem;
-    z-index: -99;
-}
-
-.site-header-btn {
-    font-size: 1.5rem;
-    background: transparent;
-    border: none;
-    font-weight: 700;
-    color: #f5f5f5;
-    text-shadow: 3px 3px 2px black;
-    margin-right: 6.5rem;
-}
-
-.site-header-btn:hover {
-    color: rgba(123, 254, 255, 1);
-    transition:
-                color ease-in .1s .1s;
-}
-
-.site-header-btn:focus {
-    outline: 0;
-}
-
 
 /********************** END OF HEADER **********************/
 
@@ -328,8 +306,10 @@ h1.home-title {
 }
 
 h2.home-subtitle {
-    margin-bottom: 1rem;
     font-weight: 400;
+    text-align: center;
+    width: 90%;
+    margin: 0 5% 5% 5%;
 }
 
 strong.light-color {
@@ -354,9 +334,9 @@ strong.light-color {
     padding: 0;
     top: 15%;
     font-weight: 400;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     color: #254F6D;
-    line-height: 1.5rem;
+    line-height: 2rem;
     width: 50%;
 }
 
@@ -406,7 +386,7 @@ p.post-title {
 
 p.post-title:after {
     content:"";
-    border: 1px solid rgba(123, 254, 255, 1);;
+    border: 1px solid rgba(123, 254, 255, 1);
     display: block;
     position: relative;
     width: 5%;
@@ -415,7 +395,7 @@ p.post-title:after {
 }
 
 p.job-title {
-    color: #254F6D;
+    color: #96C7DA;
 }
 
 .profiles-container {
@@ -468,6 +448,7 @@ figure {
 
 .person-aside-container h1 {
     color: #f5f5f5;
+    font-weight: 600;
 }
 
 .person-aside-container h2 {
@@ -499,64 +480,7 @@ figure {
 }
 
 
-
-
 /********************** END OF SINGLE PERSON ***********************/
-
-/********************** START OF FOOTER ***********************/
-
-.footer-container {
-    background: -moz-linear-gradient(top, transparent 50%, rgba(0,0,0, 0.05) 100%);
-    background: -webkit-linear-gradient(top, transparent 50%, rgba(0,0,0, 0.05) 100%);
-    background: -o-linear-gradient(top, transparent 50%, rgba(0,0,0, 0.05) 100%);
-    background: linear-gradient(top, transparent 50%, rgba(0,0,0, 0.05) 100%);
-    color: #F5F5F5;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
-.footer-nav a {
-    text-decoration: none;
-    color: #F5F5F5;
-    transition: all ease-in-out .3s;
-}
-
-.footer-nav a:hover {
-    color: rgba(123, 254, 255, 1);
-}
-
-.footer-nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    text-align: center;
-    padding: 0;
-}
-
-.footer-nav ul li {
-    text-decoration: none;
-    list-style: none;
-    font-weight: 500;
-    font-size: 1rem;
-    width: 25%;
-    flex: 1;
-}
-
-.footer-copyright {
-    color: #F5F5F5;
-    text-align: center;
-    justify-content: space-around;
-    border-top: 1px solid;
-    border-color: #F5F5F5;
-}
-
-.footer-copyright p {
-    margin: 0.2rem;
-    padding: 0.2rem;
-}
-
-/********************** END OF FOOTER ***********************/
 
 /********************** MEDIA QUERIES ***********************/
 @media only screen and (max-width: 1280px) { /* Very Large Media Query */
@@ -589,17 +513,12 @@ figure {
         line-height: 3rem;
     }
 
-
-    .footer-container {
-        display: none;
-    }
-
-    .footer-address p {
-        display: none;
-    }
-
     .site-header-main-logo {
         height: 60px;
+    }
+
+    .site-header .hidden {
+        display: none;
     }
 
     h1.home-title {
@@ -618,6 +537,9 @@ figure {
         display: none;
     }
 
+    #contact-us {
+        border-top: 1px solid green;
+    }
 }
 
 
@@ -638,12 +560,11 @@ figure {
         height: 35px;
         position: relative;
         top: -20px;
-        margin-left: 1rem;
     }
 
     .site-header--is-expanded {
         position: fixed;
-        background-color: rgba(255, 255, 255, .2);
+        background-color: rgba(0, 0, 0, .9);
     }
 
     .home-content {
@@ -721,7 +642,11 @@ figure {
     input.wpcf7-submit {
         font-size: 2rem;
         font-weight: 500;
-        float: right;
+        float: left;
+    }
+
+    .rc-anchor-normal {
+        float: left;
     }
 
     span.captcha-text {
@@ -739,7 +664,6 @@ figure {
         border: 3px solid #3A5F7F;
     }
 
-
     body {
         background-size: cover;
     }
@@ -752,7 +676,6 @@ figure {
         height: 35px;
         position: relative;
         top: -10px;
-        margin-left: 1rem;
     }
 
     .home-content {
@@ -768,10 +691,6 @@ figure {
     iframe {
         width: 100%;
         margin-left: 0;
-    }
-
-    .what-content {
-        width: 100%;
     }
 
     .what-content {
@@ -853,6 +772,10 @@ figure {
         text-align: justify;
         margin: 0 5% 5% 5%;
 
+    }
+
+    #contact-us {
+        border-top: 1px solid green;
     }
 
 }

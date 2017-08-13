@@ -1,4 +1,7 @@
 <?php
+
+define('WP_HOME','http://www.cobai-ltd.co.uk');
+define('WP_SITEURL','http://www.cobai-ltd.co.uk');
 /**
  * The base configuration for WordPress
  *

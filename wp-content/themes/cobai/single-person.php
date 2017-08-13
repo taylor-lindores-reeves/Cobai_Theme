@@ -1,4 +1,6 @@
 
+
+
 <?php get_header(); ?>
 
 <?php if( have_posts() ): while( have_posts() ): the_post(); ?>
@@ -9,9 +11,9 @@
         </figure>
 
         <div class="person-aside-container">
-            <h1><?php echo get_field('name') ?></h1>
-            <h2><?php echo get_field('degree') ?></h2>
-            <h3><?php echo get_field('job_title') ?></h3>
+            <h1><?php echo the_title() ?></h1>
+            <h2><?php echo get_field('job_title') ?></h2>
+            <h3><?php echo get_field('degree') ?></h3>
         </div>
 
         <div class="social-media-icons">
@@ -43,6 +45,3 @@
 <?php endif; ?>
 
 <?php get_footer(); ?>
-
-<!--TODO set up a new branch on git for our services-->
-<!--TODO fill out social media links on wp backend-->

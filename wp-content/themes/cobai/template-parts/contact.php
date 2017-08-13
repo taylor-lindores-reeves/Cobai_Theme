@@ -15,6 +15,8 @@ get_header();
         <h2 class="contact-form-title">Fill out the form below to get in touch!</h2>
         <div class="contact-form-content">
             <?php echo the_content() ?>
+
+            <div class="g-recaptcha" data-sitekey="6LcRrCsUAAAAACQe7GepQUmuIZvdQ4yt_Fb7EDet"></div>
         </div>
     </div>
 <?php endwhile; ?>

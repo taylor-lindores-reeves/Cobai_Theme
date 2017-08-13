@@ -1,6 +1,6 @@
 <?php
 
-// Template Name: what-we-do
+// Template Name: what we do
 
 ?>
 
